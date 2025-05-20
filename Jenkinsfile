@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         VENV = 'venv'
-        DOCKER_IMAGE = 'manikanta4809/jenkins/jenkins:lts'
+        DOCKER_IMAGE = 'manikanta4809/jenkins_newassignment'
         TAG = 'latest'
     }
 
@@ -11,7 +11,6 @@ pipeline {
         stage("Install Dependencies") {
             steps {
                 script {
-                    // Ensure Python 3 and pip are available
                     sh 'python3 -m venv $VENV'
                     sh '. $VENV/bin/activate && pip install --upgrade pip'
                     sh '. $VENV/bin/activate && pip install -r requirements.txt'
