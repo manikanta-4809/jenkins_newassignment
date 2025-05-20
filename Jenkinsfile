@@ -3,7 +3,7 @@ pipeline {
  
     environment {
         VENV = 'venv'
-        DOCKER_IMAGE = 'yourdockerhubusername/pyjen-app'
+        DOCKER_IMAGE = 'manikanta4809/pyjen-app'
         TAG = 'latest'
     }
  
