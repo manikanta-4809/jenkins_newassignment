@@ -3,7 +3,7 @@ pipeline {
  
     environment {
         VENV = 'venv'
-        DOCKER_IMAGE = 'manikanta4809/pyjen-app'
+        DOCKER_IMAGE = 'manikanta4809/jenkins/jenkins:lts'
         TAG = 'latest'
     }
  
