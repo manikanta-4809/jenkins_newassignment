@@ -31,7 +31,7 @@ pipeline {
             ls -R app/ | tee /dev/tty
 
             echo "Running flake8 linter..."
-            flake8 app/ | tee /dev/tty
+            flake8 src/ | tee /dev/tty
         '''
     }
 }
