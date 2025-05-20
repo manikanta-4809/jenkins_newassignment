@@ -22,7 +22,15 @@ pipeline {
             steps {
                 script {
                     echo "Running lint checks"
-                    sh '. $VENV/bin/activate && flake8 app/'
+                    sh '''
+                        . $VENV/bin/activate
+                        echo "Checking if flake8 is installed..."
+                        which flake8 || echo "flake8 not found!"
+                        echo "Listing files in app/ directory..."
+                        ls -R app/
+                        echo "Running flake8 linter..."
+                        flake8 app/
+                    '''
                 }
             }
         }
