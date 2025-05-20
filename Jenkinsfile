@@ -19,21 +19,23 @@ pipeline {
         }
 
         stage("Linting") {
-            steps {
-                echo "Running lint checks"
-                sh '''
-                    . $VENV/bin/activate
-                    echo "Checking if flake8 is installed..."
-                    which flake8 | tee /dev/tty
+    steps {
+        echo "Running lint checks"
+        sh '''
+            . $VENV/bin/activate
 
-                    echo "Listing files in app/ directory..."
-                    ls -R app/ | tee /dev/tty
+            echo "Checking if flake8 is installed..."
+            which flake8 | tee /dev/tty
 
-                    echo "Running flake8 linter..."
-                    flake8 app/ | tee /dev/tty
-                '''
-            }
-        }
+            echo "Listing files in app/ directory..."
+            ls -R app/ | tee /dev/tty
+
+            echo "Running flake8 linter..."
+            flake8 app/ | tee /dev/tty
+        '''
+    }
+}
+
 
         stage("Testing") {
             steps {
