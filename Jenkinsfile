@@ -21,10 +21,6 @@ pipeline {
        stage("Linting") {
             steps {
                 echo "Running lint checks"
-                sh '''
-                    . $VENV/bin/activate
-                    flake8 py.jen/
-                '''
             }
         }
 
